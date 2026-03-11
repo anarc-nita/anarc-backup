@@ -1,0 +1,14 @@
+# Firebase Firestore Rules
+# Allow public reads/writes to eventRegistrations for registration
+# Tighten this in production as needed
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /eventRegistrations/{doc} {
+      allow read: if false;         // Only Cloud Function reads internally
+      allow create: if true;        // Anyone can register
+      allow update, delete: if false;
+    }
+  }
+}

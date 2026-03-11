@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SOAR Test 12.0 — Registration</title>
+    
+    <link rel="icon" href="img/logo.png">
+    <!-- All Fonts Here-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- All CSS Here-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/EventReg.css">
+
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js",
+            "firebase/firestore": "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <section class="about-header">
+        <nav>
+            <a href="index.html"> <img src="img/logo.png" alt="" id="header-img"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="members.html">Team</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1 id="header-name">SOAR Test 12.0</h1>
+    </section>
+
+    <!-- Registration Form -->
+
+    <section class="registration">
+        <div class="reg-container">
+            <h2>Event Registration</h2>
+            <p class="reg-subtitle">Fill in your details to register for SOAR Test 12.0. Your registration will be saved securely in Firebase.</p>
+
+            <form id="registrationForm" novalidate>
+                <input type="hidden" name="eventName" value="SOAR Test 12.0">
+
+                <div class="form-group">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rollNumber">Roll Number <span class="required">*</span></label>
+                    <input type="text" id="rollNumber" name="rollNumber" placeholder="Enter your roll number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department / Branch <span class="required">*</span></label>
+                    <select id="department" name="department" required>
+                        <option value="" disabled selected>Select your department</option>
+                        <option value="CSE">Computer Science & Engineering</option>
+                        <option value="ECE">Electronics & Communication Engineering</option>
+                        <option value="EE">Electrical Engineering</option>
+                        <option value="ME">Mechanical Engineering</option>
+                        <option value="CE">Civil Engineering</option>
+                        <option value="CHE">Chemical Engineering</option>
+                        <option value="PIE">Production & Industrial Engineering</option>
+                        <option value="BT">Biotechnology</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year of Study <span class="required">*</span></label>
+                    <select id="year" name="year" required>
+                        <option value="" disabled selected>Select your year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submitBtn" class="reg-btn">
+                    <span class="btn-text">Register Now</span>
+                    <span class="btn-spinner" style="display:none;"><i class="fa fa-spinner fa-spin"></i> Registering...</span>
+                </button>
+            </form>
+
+            <div id="formMessage" class="form-message" style="display:none;"></div>
+        </div>
+    </section>
+
+    <!-- Footer Code -->
+
+    <section class="footer">
+        <h3>Connect With Our Socials</h3>
+        <p> This club provides an excellent platform for the students who want to plant their interests in the field of ROBOTICS and ARTIFICIAL INTELLIGENCE. The robotics club at NIT Agartala is an interdisciplinary club whose gate is open for all who want to pursue their interests in the mechanical, electronics, automation, control, and software field. ANARC offers myriad opportunities to learn more about designing, construction, programming, and characterization of ROBOTICS and CONTROL SYSTEM throughout the year.</p>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/anarcnit/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/anarc_nita/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/asimov-nit-agartala-robotics-club"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/anarc-nita"><i class="fa fa-github"></i></a>
+        </div><br>
+        <p>Made with <i class="fa fa-heart-o"></i> by Team ANARC <br> All Copyrights © Reserved </p>
+    </section>
+
+    <script src="config.js"></script>
+    <script src="js/onclick.js"></script>
+    <script type="module" src="js/registration.js"></script>
+</body>
+</html>
